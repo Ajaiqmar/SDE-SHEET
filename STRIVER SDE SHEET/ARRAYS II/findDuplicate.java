@@ -1,0 +1,46 @@
+// THE PROBLEM STATEMENT IS TO FIND THE INTEGER WHICH HAS BEEN REPEATED MORE THAN ONCE.
+// THE GIVEN ARRAY MAY CONTAIN VALUES FROM 1 TO n-1.
+
+// THE BRUTE FORCE APPROACH WOULD BE TO USE TWO FOR LOOPS TO FIND THE COUNT OF
+// EACH INTEGER, THEN RETURN THE ONE WHOSE COUNT IS MORE THAN ONE.
+// TIME COMPLEXITY : O(N*N)
+// SPACE COMPLEXITY : O(1)
+
+// WE CAN OPTIMISE IT TO LINEAR TIME, IF WE CAN USE AN HASHMAP/DICTIONARY TO STORE THE COUNT
+// OF EACH INTEGER IN THE GIVEN ARRAY.
+// TIME COMPLEXITY : O(N)
+// SPACE COMPLEXITY : O(N)
+
+// WE CAN ALSO DO THIS IN CONSTANT SPACE, SINCE THE INTEGERS ARE GOING TO BE IN THE RANGE
+// 1 TO n-1. SO, WE CAN USE THE GIVEN ARRAY IN A WAY TON IDENTIFY THE REPEATED ELEMENT.
+// WHILE TRAVERSING, CHECK IF THE VALUE AT THE CURRENT INDEX VALUE IS POSITIVE OR NEGATIVE, IF IT IS
+// POSITIVE THEN CHANGE IT TO NEGATIVE, ELSE THE CURRENT INDEX VALUE IS THE REPEATED ELEMENT.
+// TIME COMPLEXITY : O(N)
+// SPACE COMPLEXITY : O(1) 
+
+
+import java.util.* ;
+import java.io.*;
+import java.util.* ;
+import java.io.*;
+import java.util.ArrayList;
+
+public class Solution
+{
+    public static int findDuplicate(ArrayList<Integer> arr, int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+            int ind = Math.abs(arr.get(i));
+
+            if(arr.get(ind) < 0)
+            {
+                return ind;
+            }
+
+            arr.set(ind,-arr.get(ind));
+        }
+
+        return -1;
+    }
+}
