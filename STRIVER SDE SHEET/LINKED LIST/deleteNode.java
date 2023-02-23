@@ -1,0 +1,33 @@
+// THE PROBLEM STATEMENT IS THAT GIVEN ANY NODE IN THE LINKED LIST EXCEPT THE LAST NODE, WE NEED TO REMOVE THAT NODE WITHOUT AFFECTING
+// THE ORDER. KEEP IN MIND THAT, IT CAN BE ANY NODE AND THE LINKED LIST CAN TRAVEL ONLY IN ONE DIRECTION.
+// CAN YOU SOLVE THIS IN O(1) APPROACH??
+
+// THE BRUTE FORCE APPROACH WOULD BE TO MOVE THE VALUES FROM THE NEXT NODE TO THE CURRENT NODE AND DELETE THE LAST NODE.
+// FOR THIS APPROACH,
+// TIME COMPLEXITY : O(N)
+// SPACE COMPLEXITY : O(1)
+
+// FOR THE LATTER QUESTION, THE ANSWER IS YES, WE JUST NEED TO MOVE THE NODE VALUE IN THE VERY NEXT NODE TO THE GIVEN NODE AND
+// DELETE THE NEXT NODE. FOR THIS APPROACH,
+// TIME COMPLEXITY : O(N)
+// SPACE COMPLEXITY : O(1)
+
+
+import java.util.* ;
+import java.io.*;
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+
+class Solution {
+    public void deleteNode(ListNode node) {
+        node.val = node.next.val;
+        node.next = node.next.next;
+    }
+}
