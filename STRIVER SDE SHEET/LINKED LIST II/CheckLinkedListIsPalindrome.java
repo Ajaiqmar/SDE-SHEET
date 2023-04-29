@@ -12,10 +12,10 @@
 
 import java.util.* ;
 import java.io.*; 
-/****************************************************************
 
-    Following is the class structure of the LinkedListNode class:
-	
+/****************************************************************
+    Struture of Linked List
+    
 	class LinkedListNode<T> {
     	T data;
     	LinkedListNode<T> next;
@@ -24,7 +24,6 @@ import java.io.*;
         	this.data = data;
     	}
 	}
-
 *****************************************************************/
 
 public class Solution {
